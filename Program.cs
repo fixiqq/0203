@@ -13,9 +13,18 @@ namespace ConsoleApp5
             Console.WriteLine(" Составляется таблица из двух частей: в левой части записывается исходная матрица \n в правой части единичная, путем преобразований аналогичных преобразованиям задачи №1. \n В левой части получают единичную матрицу, а в правой автоматически получается обратная к данной \n\n Исходная матрица");
             Console.WriteLine("______________________________");
             double[,] A = new double[3, 3];
-            A[0, 0] = -3; A[0, 1] = 2; A[0, 2] = 4;
-            A[1, 0] = 2; A[1, 1] = 1; A[1, 2] = 0;
-            A[2, 0] = 1; A[2, 1] = 0; A[2, 2] = 1;
+            //Ввод значений в массив
+            //A[0, 0] = -3; A[0, 1] = 2; A[0, 2] = 4;
+            //A[1, 0] = 2; A[1, 1] = 1; A[1, 2] = 0;
+            //A[2, 0] = 1; A[2, 1] = 0; A[2, 2] = 1;
+            for (int i = 0; i < A.GetLength(0); i++)
+            {
+                for (int j = 0; j < A.GetLength(1); j++)
+                {
+                    Console.Write("Введите элемент ({0};{1}) ", i + 1, j + 1);
+                    A[i, j] = Convert.ToDouble(Console.ReadLine());
+                }
+            }
 
             double[,] AObrat = new double[3, 3];
             double[,] ACopy = new double[3, 3];
@@ -28,7 +37,7 @@ namespace ConsoleApp5
                     if (i == j) { AObrat[i, j] = 1; }
                     else { AObrat[i, j] = 0; }
                     ACopy[i, j] = A[i, j];    //создаем копию матрицы A
-                    
+
                 }
             }
 
@@ -83,7 +92,7 @@ namespace ConsoleApp5
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
-                {   
+                {
                     if (i == j) { Ee[i, j] = 1; }
                     else { Ee[i, j] = 0; }
                     if (Ee[i, j] != ACopy[i, j]) { Console.WriteLine("i=" + i); Console.WriteLine("j=" + j); }
