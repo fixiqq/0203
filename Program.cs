@@ -10,7 +10,7 @@ namespace ConsoleApp5
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(" Составляется таблица из двух частей: в левой части записывается исходная матрица \n в правой части единичная, путем преобразований аналогичных преобразованиям задачи №1. \n В левой части получают единичную матрицу, а в правой автоматически получается обратная к данной \n\n Исходная матрица");
+            Console.WriteLine(" Составляется таблица из двух частей: в левой части записывается исходная матрица \n в правой части единичная, путем преобразований аналогичных преобразованиям задачи №1. \n В левой части получают единичную матрицу, а в правой автоматически получается обратная к данной \n");
             Console.WriteLine("______________________________");
             double[,] A = new double[3, 3];
             //Ввод значений в массив
@@ -25,6 +25,8 @@ namespace ConsoleApp5
                     A[i, j] = Convert.ToDouble(Console.ReadLine());
                 }
             }
+            Console.WriteLine("______________________________");
+            Console.WriteLine("Исходная матрица");
 
             double[,] AObrat = new double[3, 3];
             double[,] ACopy = new double[3, 3];
@@ -42,7 +44,6 @@ namespace ConsoleApp5
             }
 
             print(ACopy);
-            Console.Read();
 
 
             //прямой ход
@@ -68,7 +69,6 @@ namespace ConsoleApp5
 
             print(AObrat);
             Console.WriteLine("______________________________");
-            Console.ReadLine();
             Console.WriteLine();
             //обратный ход            
             for (int kk = 3 - 1; kk > 0; kk--)
@@ -102,8 +102,7 @@ namespace ConsoleApp5
             print(AObrat);
             Console.WriteLine("______________________________");
             if (flagA == 1) { Console.WriteLine(" Матрица стала единичной"); }
-            Console.ReadLine();
-
+            Console.WriteLine("______________________________");
             //проверка
             double[,] ProverkaA = new double[3, 3];
             for (int i = 0; i < 3; i++)//строки
